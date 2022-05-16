@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import './cars_list.dart';
 
@@ -47,7 +48,17 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Card(
                 child: ListTile(
                   title: Text(
-                    item.model
+                    item.model,
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.cyan,
+                      fontSize: 20
+                    ),
+                  ),
+                  subtitle: Text(
+                    item.brand,
+                    textAlign: TextAlign.center,
                   ),
                 ),
               ),
