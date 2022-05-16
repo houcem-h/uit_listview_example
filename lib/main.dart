@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './cars_list.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Luxury cars gallery'),
     );
   }
 }
@@ -30,23 +31,29 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
+  final _cars = cars;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[
-             Text(
-              'You have pushed the button this many times:',
-            ),
-          ],
-        ),
-      ),
+      body: ListView.builder(
+        itemCount: _cars.length,
+        itemBuilder: (context, index) {
+          final item = _cars[index];
+          return Dismissible(
+              key: Key(item.model),
+              child: Card(
+                child: ListTile(
+                  title: Text(
+                    item.model
+                  ),
+                ),
+              )
+          );
+        }
+      )
     );
   }
 }
