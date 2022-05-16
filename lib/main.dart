@@ -59,6 +59,14 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               color: Colors.cyanAccent,
             ),
+            onDismissed: (direction) {
+                setState(() {
+                  _cars.removeAt(index);
+                });
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text("Car ${item.brand} ${item.model} deleted !"))
+                );
+            },
           );
         }
       )
