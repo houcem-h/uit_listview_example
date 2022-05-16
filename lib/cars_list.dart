@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import './car.dart';
 
 List<Car> cars = [
-  Car('Aston Martin', 'Virage', Image.asset('images/aston_maritn_virage.jpg')),
+  Car('Aston Martin', 'Virage', Image.asset('images/aston_martin_virage.jpg')),
   Car('Audi', 'R8', Image.asset('images/audi_r8.jpg')),
   Car('Mercedes', 'SLS', Image.asset('images/mercedes_sls.jpg')),
   Car('BMW', 'i8', Image.asset('images/bmw_i8.jpg')),
