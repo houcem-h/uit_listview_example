@@ -50,7 +50,15 @@ class _MyHomePageState extends State<MyHomePage> {
                     item.model
                   ),
                 ),
-              )
+              ),
+            background: Container(
+              child: const Icon(
+                Icons.delete,
+                size: 40,
+                color: Colors.white,
+              ),
+              color: Colors.cyanAccent,
+            ),
           );
         }
       )
